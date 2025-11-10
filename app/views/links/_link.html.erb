@@ -1,4 +1,4 @@
 <div id="<%= dom_id(link) %>" class="border-b border-gray-200 py-4">
-  <%= link.to_param %>
+  <%= link_to link.to_param, link_path(link), class: 'text-blue-500 hover:text-blue-700 underline' %>
   <%= link.url %>
 </div>
