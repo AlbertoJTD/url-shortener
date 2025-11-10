@@ -7,3 +7,11 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+1000.times do
+  Link.create(
+    url: Faker::Internet.url,
+    title: Faker::Internet.domain_name,
+    description: Faker::Lorem.paragraph
+  )
+end
