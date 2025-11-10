@@ -3,7 +3,10 @@ class ViewsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def show
-    @link.increment!
+    @link.views.create(
+      user_agent: request.user_agent,
+      ip: request.ip
+    )
 
     redirect_to @link.url, allow_other_host: true
   end
