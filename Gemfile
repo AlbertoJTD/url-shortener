@@ -65,6 +65,7 @@ group :development do
   # gem "spring"
   gem 'pry'
   gem 'pry-byebug'
+  gem "faker", "~> 3.5"
 end
 
 group :test do
