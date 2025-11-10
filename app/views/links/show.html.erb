@@ -5,5 +5,8 @@
   <p class="text-gray-500 bg-gray-100 p-4 rounded-md my-5">
     <%= @link.description %>
   </p>
-  <%= link_to @link.url, @link.url, class: 'text-blue-500 hover:text-blue-700 underline' %>
+  <%= link_to view_path(@link), class: 'text-blue-500 hover:text-blue-700 underline', target: :blank, data: { turbo: false } do %>
+    <%= @link.url %>
+    <span class="text-gray-500 text-sm"><%= @link.views_count %> views</span>
+  <% end %>
 </div>
