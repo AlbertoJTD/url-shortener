@@ -1,5 +1,12 @@
 <div id="<%= dom_id(link) %>" class="border-b border-gray-200 py-4">
-  <%= link_to link.to_param, link_path(link), class: 'text-blue-500 hover:text-blue-700 underline' %>
-  <%= link.url %>
-  <p><%= link.views_count %> views</p>
+  <div class="">
+    <%= link_to link.to_param, link_path(link), class: 'text-blue-500 hover:text-blue-700 underline' %>
+    <%= link_to view_path(link), class: 'text-blue-500 hover:text-blue-700 underline', target: :blank, data: { turbo: false } do %>
+      <%= link.url %>
+    <% end %>
+  </div>
+  
+  <span class="text-gray-800 text-sm bg-gray-300 rounded-md px-2 py-1">
+    <%= link.views.count %> views
+  </span>
 </div>

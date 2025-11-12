@@ -1,0 +1,14 @@
+
+<div>
+  <div>
+    <div>Edit link</div>
+    <%= link_to 'Back', link_path(@link), class: 'text-blue-500 hover:text-blue-700 underline' %>
+  </div>
+
+  <div class="">
+    <%= form_with model: @link do |form| %>
+      <%= form.url_field :url, autofocus: true, class: 'border border-gray-300 rounded px-4 py-2', placeholder: 'Enter URL', required: true %>
+      <%= form.button "Save", class: 'bg-gray-100 rounded px-4 py-2 hover:bg-gray-200' %>
+    <% end %>
+  </div>
+</div>
