@@ -9,4 +9,6 @@
     <%= @link.url %>
     <span class="text-gray-500 text-sm"><%= @link.views_count %> views</span>
   <% end %>
+
+  <%= line_chart @link.views.group_by_day(:created_at, range: 2.weeks.ago..Time.now, expand_range: true).count %>
 </div>
