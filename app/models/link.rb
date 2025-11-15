@@ -4,6 +4,10 @@ class Link < ApplicationRecord
   has_many :views, dependent: :destroy
   validates :url, presence: true
 
+  after_create_commit if: :url_previously_changed? do
+    MetadataJob.perform_later(to_param)
+  end
+
   def increment!
     self.views_count += 1
     save!
