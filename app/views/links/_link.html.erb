@@ -1,4 +1,6 @@
 <%= tag.div id: dom_id(link), class: 'border-b border-gray-200 py-2' do %>
+  <%= turbo_stream_from link %>
+
   <div class="grid grid-cols-8 items-center py-4">
     <div class="col-span-5">
       <%= link_to view_path(link), target: :_blank, data: { turbo: false }, class: "text-blue-600 underline" do %>

@@ -1,13 +1,11 @@
 <div>
   <h1 class="text-2xl font-bold">URL Shortener</h1>
 
-  <%= form_with model: Link.new do |form| %>
-    <%= form.url_field :url, autofocus: true, class: 'border border-gray-300 rounded px-4 py-2', placeholder: 'Enter URL', required: true %>
-    <%= form.button "Save", class: 'bg-gray-100 rounded px-4 py-2 hover:bg-gray-200' %>
-  <% end %>
-  
+  <%= render partial: 'links/link_form', locals: { link: Link.new } %>
 
-  <% @links.each do |link| %>
-    <%= render partial: 'links/link', locals: { link: link } %>
-  <% end %>
+  <div id="links">
+    <% @links.each do |link| %>
+      <%= render partial: 'links/link', locals: { link: link } %>
+    <% end %>
+  </div>
 </div>

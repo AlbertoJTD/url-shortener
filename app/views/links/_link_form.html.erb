@@ -1,0 +1,4 @@
+<%= form_with model: link, id: 'link_form' do |form| %>
+  <%= form.url_field :url, autofocus: true, class: 'border border-gray-300 rounded px-4 py-2', placeholder: 'Enter URL', required: true %>
+  <%= form.button "Save", class: 'bg-gray-100 rounded px-4 py-2 hover:bg-gray-200' %>
+<% end %>

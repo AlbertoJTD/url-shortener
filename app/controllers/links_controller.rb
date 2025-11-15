@@ -9,7 +9,15 @@ class LinksController < ApplicationController
     @link = Link.new(link_params)
 
     if @link.save
-      redirect_to root_path, notice: 'Link created successfully'
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: 'Link created successfully' }
+        format.turbo_stream do
+          render turbo_stream: [
+            turbo_stream.prepend('links', partial: 'links/link', locals: { link: @link }),
+            turbo_stream.replace('link_form', partial: 'links/link_form', locals: { link: Link.new })
+          ]
+        end
+      end
     else
       index # runs the code inside the index action, aslong as index does not call render or redirect
       render :index, status: :unprocessable_entity
