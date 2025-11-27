@@ -1,6 +1,7 @@
 class Link < ApplicationRecord
   include HasShortCode
 
+  belongs_to :user, optional: true
   has_many :views, dependent: :destroy
   validates :url, presence: true
 
