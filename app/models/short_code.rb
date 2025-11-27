@@ -4,7 +4,7 @@ class ShortCode
 
   def self.encode(number)
     raise ArgumentError, 'Number must be an integer' unless number.is_a?(Integer)
-    raise ArgumentError, 'Number must be positive' if number < 0
+    raise ArgumentError, 'Number must be positive' if number.negative?
 
     # Returns `0`
     return ALPHABET[0] if number.zero? || number.nil?
