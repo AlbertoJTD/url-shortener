@@ -19,4 +19,10 @@ class Link < ApplicationRecord
   rescue URI::InvalidURIError
     nil
   end
+
+  def editable_by?(user)
+    return false if user.blank?
+
+    user.id == user_id
+  end
 end

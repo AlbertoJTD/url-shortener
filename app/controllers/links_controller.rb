@@ -1,12 +1,14 @@
 class LinksController < ApplicationController
+  before_action :authenticate_user!, only: %i[edit update destroy]
   before_action :set_link, only: %i[show edit update destroy]
+  before_action :authorized_user, only: %i[edit update destroy]
 
   def index
     @links = Link.all.includes(:views).order(created_at: :desc)
   end
 
   def create
-    @link = Link.new(link_params)
+    @link = Link.new(link_params.with_defaults(user: current_user))
 
     if @link.save
       respond_to do |format|
@@ -49,5 +51,9 @@ class LinksController < ApplicationController
 
   def set_link
     @link = Link.find(params[:id])
+  end
+
+  def authorized_user
+    redirect_to root_path, alert: 'You are not authorized to edit this link' unless @link.editable_by?(current_user)
   end
 end
