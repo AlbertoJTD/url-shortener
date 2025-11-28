@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  link: one
-  user_agent: MyString
-  ip: MyString
+view_one:
+  link: link_one
+  user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  ip: 127.0.0.1
 
-two:
-  link: two
-  user_agent: MyString
-  ip: MyString
+view_two:
+  link: link_two
+  user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+  ip: 127.0.0.1

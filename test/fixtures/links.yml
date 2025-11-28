@@ -1,15 +1,24 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  url: MyString
-  title: MyString
-  description: MyString
-  image: MyString
+link_one:
+  url: https://example.com
+  title: Example
+  description: Example description
+  image:
   views_count: 1
+  user: user_one
 
-two:
-  url: MyString
-  title: MyString
-  description: MyString
-  image: MyString
-  views_count: 1
+link_two:
+  url: https://google.com
+  title: Google
+  description: Google description
+  image:
+  views_count: 2
+  user: user_two
+
+anonymous:
+  url: https://example.com
+  title: Example
+  description: Example description
+  image:
+  views_count: 0
