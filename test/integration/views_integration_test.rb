@@ -1,6 +1,6 @@
 require "test_helper"
 
-class ViewTest < ActionDispatch::IntegrationTest
+class ViewsIntegrationTest < ActionDispatch::IntegrationTest
   test 'creates a view when a link is visited' do
     link = links(:link_one)
 

@@ -1,6 +1,6 @@
 require "test_helper"
 
-class UserTest < ActionDispatch::IntegrationTest
+class UsersIntegrationTest < ActionDispatch::IntegrationTest
   test 'guess can log in or register' do
     get links_path
     assert_match 'Register', response.body
