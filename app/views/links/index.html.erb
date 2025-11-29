@@ -19,5 +19,7 @@
     <% @links.each do |link| %>
       <%= render partial: 'links/link', locals: { link: link } %>
     <% end %>
+
+    <%== @pagy.series_nav %>
   </div>
 </div>
